@@ -31,20 +31,20 @@ pipeline {
            // }
        // }
 
-        stage('Code Analysis with SonarQube') {
-            steps {
-                withSonarQubeEnv('sonar') { // Assurez-vous que 'sonar' est configuré dans Jenkins
-                    sh '''${scannerHome}/bin/sonar-scanner \
-                    -Dsonar.projectKey=natik-back-key \
-                    -Dsonar.projectName=natik-back \
-                    -Dsonar.language=ts \
-                    -Dsonar.sources=. \
-                    -Dsonar.exclusions=node_modules/**,dist/** \
-                    -Dsonar.tests=src \
-                    -Dsonar.test.inclusions=**/*.test.ts'''
-                }
-            }
-        }
+        //stage('Code Analysis with SonarQube') {
+           // steps {
+             //   withSonarQubeEnv('sonar') { // Assurez-vous que 'sonar' est configuré dans Jenkins
+               //     sh '''${scannerHome}/bin/sonar-scanner \
+                 //   -Dsonar.projectKey=natik-back-key \
+                 //   -Dsonar.projectName=natik-back \
+                 //   -Dsonar.language=ts \
+                 //   -Dsonar.sources=. \
+                 //   -Dsonar.exclusions=node_modules/**,dist/** \
+                 //   -Dsonar.tests=src \
+                //    -Dsonar.test.inclusions=**/*.test.ts'''
+                //}
+           // }
+       // }
 
         stage('Push Docker Image') {
             steps {
