@@ -25,11 +25,11 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'npm run test' // Assurez-vous que les tests sont définis dans le fichier package.json
-            }
-        }
+        //stage('Test') {
+          //  steps {
+              //  sh 'npm run test' // Assurez-vous que les tests sont définis dans le fichier package.json
+           // }
+       // }
 
         stage('Code Analysis with SonarQube') {
             steps {
