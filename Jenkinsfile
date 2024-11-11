@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         //registry = "manatsoadavid/back" // Nom de l'image Docker
-       // registryCredential = 'dockerhub' // ID des credentials Docker Hub dans Jenkins
+        //registryCredential = 'dockerhub' // ID des credentials Docker Hub dans Jenkins
         scannerHome = tool 'sonar4.7' // Configurez le scanner SonarQube dans Jenkins
         COLOR_MAP = [
             'SUCCESS': 'good',
@@ -45,27 +45,27 @@ pipeline {
         }
 
         //stage('Push Docker Image') {
-           // steps {
-              //  script {
-                   // def dockerImage = docker.build("${registry}:version${BUILD_NUMBER}")
-                   // docker.withRegistry('', registryCredential) {
-                    //    dockerImage.push("version${BUILD_NUMBER}")
-                  //  }
-               // }
-           // }
-       // }
+         //   steps {
+             //   script {
+               //     def dockerImage = docker.build("${registry}:version${BUILD_NUMBER}")
+               //     docker.withRegistry('', registryCredential) {
+                 //       dockerImage.push("version${BUILD_NUMBER}")
+                 //   }
+                //}
+            //}
+        //}
 
         //stage('Remove Local Docker Image') {
             //steps {
-               // sh "docker rmi ${registry}:version${BUILD_NUMBER}"
-           // }
-       // }
+                //sh "docker rmi ${registry}:version${BUILD_NUMBER}"
+            //}
+        //}
 
         //stage('Deploy') {
-          //  agent { label 'kubernetes' }
-           // steps {
-               // sh "helm upgrade --install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
-           // }
+            //agent { label 'kubernetes' }
+            //steps {
+              //  sh "helm upgrade --install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
+            //}
        // }
     }
 
