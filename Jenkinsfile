@@ -1,3 +1,8 @@
+def COLOR_MAP = [
+            'SUCCESS': 'good',
+            'FAILURE': 'danger'
+        ]
+
 pipeline {
     agent any
 
@@ -5,10 +10,7 @@ pipeline {
         registry = "manatsoadavid/back" // Nom de l'image Docker
         registryCredential = 'dockerhub' // ID des credentials Docker Hub dans Jenkins
         scannerHome = tool 'sonar4.7' // Configurez le scanner SonarQube dans Jenkins
-        COLOR_MAP = [
-            'SUCCESS': 'good',
-            'FAILURE': 'danger'
-        ]
+       
     }
 
     tools {
