@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ERROR_MESSAGES = void 0;
+exports.ERROR_MESSAGES = {
+    AGENDA_CREATE_ERROR: 'Error creating agenda',
+    AGENDA_FETCH_ERROR: 'Error fetching agenda',
+    AGENDA_UPDATE_ERROR: 'Error updating agenda',
+    AGENDA_DELETE_ERROR: 'Error deleting agenda',
+    AVAILABILITY_CREATE_ERROR: 'Error creating availability',
+    AVAILABILITY_FETCH_ERROR: 'Error fetching availabilities',
+    AVAILABILITY_FETCH_BY_ID_ERROR: 'Error fetching availability',
+    AVAILABILITY_UPDATE_ERROR: 'Error updating availability',
+    AVAILABILITY_DELETE_ERROR: 'Error deleting availability',
+    MISSING_REQUIRED_FIELDS: 'Tous les champs obligatoires doivent être renseignés',
+    SUBSCRIPTION_TYPE_CREATE_ERROR: 'Erreur lors de la création du type d\'abonnement',
+    SUBSCRIPTION_TYPE_FETCH_ERROR: 'Erreur lors de la récupération des types d\'abonnement',
+    SUBSCRIPTION_TYPE_FETCH_BY_ID_ERROR: 'Erreur lors de la récupération du type d\'abonnement',
+    SUBSCRIPTION_TYPE_UPDATE_ERROR: 'Erreur lors de la mise à jour du type d\'abonnement',
+    SUBSCRIPTION_TYPE_DELETE_ERROR: 'Erreur lors de la suppression du type d\'abonnement',
+    SUBSCRIPTION_CYCLE_CREATE_ERROR: 'Erreur lors de la création du cycle d\'abonnement',
+    SUBSCRIPTION_CYCLE_FETCH_ERROR: 'Erreur lors de la récupération des cycles d\'abonnement',
+    SUBSCRIPTION_CYCLE_FETCH_BY_ID_ERROR: 'Erreur lors de la récupération du cycle d\'abonnement',
+    SUBSCRIPTION_CYCLE_UPDATE_ERROR: 'Erreur lors de la mise à jour du cycle d\'abonnement',
+    SUBSCRIPTION_CYCLE_DELETE_ERROR: 'Erreur lors de la suppression du cycle d\'abonnement',
+    SUBSCRIPTION_CREATE_ERROR: 'Erreur lors de la création de l\'abonnement',
+    SUBSCRIPTION_FETCH_ERROR: 'Erreur lors de la récupération des abonnements',
+    SUBSCRIPTION_FETCH_BY_ID_ERROR: 'Erreur lors de la récupération de l\'abonnement',
+    SUBSCRIPTION_UPDATE_ERROR: 'Erreur lors de la mise à jour de l\'abonnement',
+    SUBSCRIPTION_DELETE_ERROR: 'Erreur lors de la suppression de l\'abonnement',
+};

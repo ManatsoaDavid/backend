@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const agenda_controller_1 = require("../controllers/agenda.controller");
+const agenda_service_1 = require("../services/agenda.service");
+const agendaRouter = (0, express_1.Router)();
+const agendaService = new agenda_service_1.AgendaService();
+const agendaController = new agenda_controller_1.AgendaController(agendaService);
+agendaRouter.post('/', (req, res) => agendaController.createAgenda(req, res));
+agendaRouter.get('/', (req, res) => agendaController.getAgendas(req, res));
+agendaRouter.get('/practitioner/:id', (req, res) => agendaController.getAgendaByPractitionerId(req, res));
+agendaRouter.put('/:agendaId', (req, res) => agendaController.updateAgenda(req, res));
+agendaRouter.delete('/practitioner/:practitionerId/:agendaId', (req, res) => agendaController.deleteAgenda(req, res));
+exports.default = agendaRouter;
