@@ -44,28 +44,28 @@ pipeline {
             }
         }
 
-       // stage('Push Docker Image') {
-          //  steps {
+        //stage('Push Docker Image') {
+         //   steps {
              //   script {
-                  //  def dockerImage = docker.build("${registry}:version${BUILD_NUMBER}")
-                  //  docker.withRegistry('', registryCredential) {
-                        dockerImage.push("version${BUILD_NUMBER}")
-                   // }
-               // }
-           // }
-      // }
+               //     def dockerImage = docker.build("${registry}:version${BUILD_NUMBER}")
+               //     docker.withRegistry('', registryCredential) {
+                 //       dockerImage.push("version${BUILD_NUMBER}")
+                 //   }
+                //}
+            //}
+        //}
 
         //stage('Remove Local Docker Image') {
-           // steps {
+            //steps {
                 //sh "docker rmi ${registry}:version${BUILD_NUMBER}"
-           // }
-       // }
+            //}
+        //}
 
         //stage('Deploy') {
-          //  agent { label 'kubernetes' }
-          //  steps {
-           //  //   sh "helm upgrade --install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
-           // }
+            //agent { label 'kubernetes' }
+            //steps {
+              //  sh "helm upgrade --install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
+            //}
        // }
     }
 
