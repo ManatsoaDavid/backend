@@ -8,11 +8,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh 'npm install'
-             //  sh 'npm run build'
-           }
+                sh 'npm install'
+                // sh 'npm run build'
+            }
         }
-   }
 
         // stage('Test') {
         //     steps {
@@ -54,7 +53,7 @@ pipeline {
         //         sh "helm upgrade --install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
         //     }
         // }
-
+    } // <- Fermeture correcte du bloc stages
 
     post {
         always {
