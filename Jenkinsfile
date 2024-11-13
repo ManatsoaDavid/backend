@@ -1,3 +1,8 @@
+ def COLOR_MAP = [
+            'SUCCESS': 'good',
+            'FAILURE': 'danger'
+        ]
+
 pipeline {
     agent any
 
@@ -71,9 +76,9 @@ pipeline {
     post {
         always {
             cleanWs() // Nettoie le workspace Jenkins
-            // echo 'Slack Notifications'
-            // script {
-            //     slackSend(
+             echo 'Slack Notifications'
+             script {
+                 slackSend(
                     tokenCredentialId: 'slacktoken'
                     channel: '#devops-project',
                     color: COLOR_MAP[currentBuild.currentResult],
