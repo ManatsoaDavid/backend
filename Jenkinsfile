@@ -5,13 +5,14 @@ pipeline {
         nodejs 'nodejs20'
     }
 
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-                sh 'npm run build'
-            }
-        }
+    //stages {
+        //stage('Build') {
+          //  steps {
+            //    sh 'npm install'
+            //    sh 'npm run build'
+          //  }
+       // }
+   // }
 
         // stage('Test') {
         //     steps {
@@ -53,7 +54,7 @@ pipeline {
         //         sh "helm upgrade --install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
         //     }
         // }
-    }
+
 
     post {
         always {
