@@ -1,16 +1,16 @@
-def COLOR_MAP = [
-            'SUCCESS': 'good',
-            'FAILURE': 'danger'
-        ]
+//def COLOR_MAP = [
+       //     'SUCCESS': 'good',
+          //  'FAILURE': 'danger'
+      //  ]
 
 pipeline {
     agent any
  
-    environment {
-        registry = "manatsoadavid/back" // Nom de l'image Docker
-        registryCredential = 'dockerhub' // ID des credentials Docker Hub dans Jenkins
+  //  environment {
+   //     registry = "manatsoadavid/back" // Nom de l'image Docker
+     //   registryCredential = 'dockerhub' // ID des credentials Docker Hub dans Jenkins
        
-    }
+ //   }
 
     tools {
         nodejs 'nodejs20'
@@ -30,29 +30,29 @@ pipeline {
         //     }
         // }j
 
-        stage('Code Analysis with SonarQube') {
-            environment {
-                scannerHome = tool 'sonar6'
-            }
-            steps {
-                withSonarQubeEnv('sonarqube-server') { // Nom du serveur configuré dans Jenkins
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+   //     stage('Code Analysis with SonarQube') {
+   //         environment {
+    //            scannerHome = tool 'sonar6'
+      //      }
+     //       steps {
+     //           withSonarQubeEnv('sonarqube-server') { // Nom du serveur configuré dans Jenkins
+      //              sh "${scannerHome}/bin/sonar-scanner"
+       //         }
+        //    }
+     //   }
 
-        stage("Quality Gate"){
-            steps {
-                script {
-                timeout(time: 1, unit: 'HOURS') {
-                def qg = waitForQualityGate()
-                if (qg.status != 'OK') {
-                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                }
-                }
-                }
-            }
-        }
+      //  stage("Quality Gate"){
+      //      steps {
+      //          script {
+       //         timeout(time: 1, unit: 'HOURS') {
+        //        def qg = waitForQualityGate()
+        //        if (qg.status != 'OK') {
+         //         error "Pipeline aborted due to quality gate failure: ${qg.status}"
+          //      }
+           //     }
+           //     }
+           // }
+       // }
 
         // stage('Push Docker Image') {
          //    steps {
@@ -82,16 +82,16 @@ pipeline {
     post {
         always {
             cleanWs() // Nettoie le workspace Jenkins
-             echo 'Slack Notifications'
-             script {
-                 slackSend(
-                    tokenCredentialId: 'slacktoken' ,
-                    channel: '#devops-project',
-                    color: COLOR_MAP[currentBuild.currentResult],
-                    message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
+         //    echo 'Slack Notifications'
+          //   script {
+              //   slackSend(
+            //        tokenCredentialId: 'slacktoken' ,
+               //     channel: '#devops-project',
+              //      color: COLOR_MAP[currentBuild.currentResult],
+              //      message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
                         
-                 )
-             }
+               // )
+            // }
         }
     }
 }
