@@ -13,8 +13,7 @@ RUN npm install
 # Copier le reste des fichiers source dans le conteneur
 COPY . .
 
-# Construire le projet TypeScript
-RUN npm run build
+# Construire le projet TypeScripte
 
 # Exposer le port pour le backend
 EXPOSE 5000
