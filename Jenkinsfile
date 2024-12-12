@@ -10,7 +10,7 @@ pipeline {
       //  registry = "manatsoadavid/back" // Nom de l'image Docker
        // registryCredential = 'dockerhub' // ID des credentials Docker Hub dans Jenkins
        
-   // }
+   // }a
 
     tools {
         nodejs 'nodejs20'
