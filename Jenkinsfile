@@ -74,7 +74,7 @@ pipeline {
          stage('Deploy') {
              agent { label 'kubernetes' }
              steps {
-                   sh "helm upgrade --install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
+                   sh "helm install --force mychart /home/ramihone/back/backendchart --set appimageback=${registry}:version${BUILD_NUMBER}"
              }
          }
     } // <- Fermeture correcte du bloc stages
